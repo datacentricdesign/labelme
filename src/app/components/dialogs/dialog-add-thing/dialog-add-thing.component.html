@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Add Thing</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.name" placeholder="Name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.type" placeholder="Type" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.description" placeholder="Description" />
+  </mat-form-field>
+  <mat-form-field>
+    <textarea
+      rows="15"
+      cols="70"
+      matInput
+      [(ngModel)]="data.pem"
+      placeholder="Your public key starting with -----BEGIN PUBLIC KEY-----"
+    ></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button
+    *ngIf="data.name && data.pem"
+    mat-button
+    [mat-dialog-close]="data"
+    cdkFocusInitial
+  >
+    Create
+  </button>
+</div>

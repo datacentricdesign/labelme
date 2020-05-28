@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Update Public key for {{ data.thing.name }}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <textarea
+      rows="15"
+      cols="70"
+      matInput
+      [(ngModel)]="data.pem"
+      placeholder="Enter Your Public Key"
+    ></textarea>
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button *ngIf="data.pem" mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    Upload
+  </button>
+</div>

@@ -1,0 +1,22 @@
+.main-container {
+  position: relative;
+}
+
+.gallery {}
+
+.selectedLabel {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+}
+
+.selectedLabel label {
+  position: absolute;
+  color: white;
+  font-size: medium;
+  font-variant: small-caps;
+  white-space: nowrap;
+}
+
+.classLabels {}

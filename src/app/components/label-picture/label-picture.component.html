@@ -1,0 +1,37 @@
+<div class="main-container">
+  <div class="gallery">
+    <gallery id="imageGallery" [thumb]="true" [loop]="false" [counter]="false">
+    </gallery>
+  </div>
+
+  <div class="selectedLabel" *ngIf="selectedLabel['name']">
+    <label ngbButtonLabel class="btn-primary">{{
+      selectedLabel["name"]
+    }}</label>
+  </div>
+  <div class="classLabels">
+    <app-labels (labelClickEvent)="retrieveLabel($event)"></app-labels>
+  </div>
+</div>
+
+<!-- <div *ngIf="showData">
+  <div class="date-container">{{ date }}</div> -->
+<!-- <div class="input-container">
+    <input
+      #labelInput
+      (keyup.enter)="onInputEnter(labelInput.value)"
+      placeholder="Enter New Label for this Image"
+    />
+  </div>
+  <div class="data-container">
+    <div
+      *ngFor="let values of property_values; let i = index"
+      class="data-container-i"
+    >
+      {{ property_values[index_slider][i + 2] }}
+    </div>
+    <div *ngFor="let label of newLabel" class="data-container-i">
+      {{ label }}
+    </div>
+  </div> -->
+<!-- </div> -->

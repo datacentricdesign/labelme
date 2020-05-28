@@ -1,0 +1,41 @@
+<div class="searchBar">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter New Label"
+      [(ngModel)]="newLabel"
+    />
+    <div class="input-group-append">
+      <button
+        class="btn btn-outline-dark"
+        type="submit"
+        [disabled]="!newLabel"
+        (click)="addLabel()"
+      >
+        + Add
+      </button>
+    </div>
+  </div>
+</div>
+<form [formGroup]="form">
+  <div ngbRadioGroup>
+    <label
+      *ngFor="let label of labels"
+      ngbButtonLabel
+      class="btn-outline-dark mr-2 labelsInput"
+    >
+      <input
+        formControlName="label"
+        name="label"
+        ngbButton
+        type="radio"
+        [value]="label"
+        (click)="onLabelClicked(label)"
+      />
+      {{ label.name }}
+    </label>
+  </div>
+</form>
+<hr />
+<!-- <pre>{{ form.value["label"]["id"] }} :{{ form.value["label"]["name"] }}</pre> -->

@@ -1,0 +1,16 @@
+.searchBar {
+  margin-top: 20px;
+}
+
+.label-container {
+  display: inline;
+}
+
+.label-container>button {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.labelsInput {
+  font-variant: small-caps;
+}
